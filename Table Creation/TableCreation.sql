@@ -32,7 +32,6 @@ CREATE TABLE soldier (
     name VARCHAR(100) NOT NULL,
     post VARCHAR(30) NOT NULL,
 	batalian_id int NOT NULL,
-    year INT NOT NULL,
     doj DATE NOT NULL, -- date of joining
     dob DATE NOT NULL, -- date of birth
     gender INT NOT NULL CHECK (gender IN (0, 1)), -- Gender 0 for female and 1 for male
@@ -46,6 +45,14 @@ CREATE TABLE soldier (
 );
 
 alter table soldier add column experience varchar(20) after squad_no;
+
+ALTER TABLE Soldier DROP COLUMN chest;
+
+ALTER TABLE Soldier ADD chest INT CHECK (chest > 30) after weight;
+
+ALTER TABLE Soldier DROP COLUMN year;
+
+
 
 desc soldier;
 -- ---------------------------------------------------------------------------
