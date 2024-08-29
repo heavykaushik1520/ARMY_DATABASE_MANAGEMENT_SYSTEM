@@ -8,3 +8,5 @@ VALUES
 (4, 'Delta Company', 'Captain Delta',  75),
 (5, 'Echo Company', 'Captain Echo', 110),
 (6, 'Foxtrot Company', 'Captain Foxtrot', 95);
+
+select * from batalian;

@@ -23,3 +23,5 @@ VALUES
 (19, 'Naveen Kumar', 'Major', 1, '2017-07-10', '1985-08-02', 1, 175, 70, 37, 5, 'Active'),
 (20, 'Ananya Sharma', 'Captain', 2, '2020-03-25', '1993-02-12', 0, 167, 62, 34, 6, 'Active');
 
+
+select * from soldier;

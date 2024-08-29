@@ -22,3 +22,6 @@ VALUES
 (18, 'Heckler & Koch G36C', 'Rifle', 20),
 (19, 'SIG Sauer P229', 'Pistol', 16),
 (20, 'FN SCAR H', 'Rifle', 18);
+
+
+select * from inventory;

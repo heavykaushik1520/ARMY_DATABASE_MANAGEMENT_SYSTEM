@@ -32,3 +32,6 @@ VALUES
 (28, 721409, 'Ambassa'),
 (29, 721410, 'Belonia'),
 (30, 721411, 'Sabalgarh');
+
+
+select * from Location;

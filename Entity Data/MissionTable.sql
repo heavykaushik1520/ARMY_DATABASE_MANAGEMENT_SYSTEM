@@ -22,3 +22,6 @@ VALUES
 (18, 18, 'Operation Romeo', '2024-06-15', '2024-07-01', 20),
 (19, 2, 'Operation Sierra', '2024-07-20', '2024-08-05', 16),
 (20, 15, 'Operation Tango', '2024-08-15', '2024-09-01', 18);
+
+
+select * from mission;
