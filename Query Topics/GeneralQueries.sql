@@ -74,6 +74,65 @@ SELECT
             s.batalian_id = b.batalian_id) AS average_weight
 FROM
     batalian b;
+    
+-- 8 . This view shows details about missions, including the mission name, the name of the soldier on the mission, and the leader's name.
+CREATE VIEW View_MissionDetails AS
+    SELECT 
+        m.mission_id,
+        m.mission_name,
+        s.name AS soldier_name,
+        (SELECT 
+                name
+            FROM
+                soldier
+            WHERE
+                soldier_id = m.lead_by) AS leader_name,
+        m.start_date,
+        m.end_date
+    FROM
+        Mission m
+            JOIN
+        Soldier s ON m.soldier_id = s.soldier_id;
+        
+SELECT 
+    *
+FROM
+    View_MissionDetails;
+        
+-- 9 .  view provides information about soldiers and their posting locations.
+CREATE VIEW View_SoldierPostingDetails AS
+    SELECT 
+        s.soldier_id,
+        s.name AS soldier_name,
+        p.date AS posting_date,
+        l.location_name
+    FROM
+        Posting p
+            JOIN
+        Soldier s ON p.soldier_id = s.soldier_id
+            JOIN
+        Location l ON p.location_id = l.location_id;
+        
+select * from View_SoldierPostingDetails;
+
+-- 10 . view calculates the total number of soldiers in each battalion.
+CREATE VIEW View_BatalianStrength AS
+    SELECT 
+        b.batalian_id,
+        b.batalian_name,
+        COUNT(s.soldier_id) AS total_soldiers
+    FROM
+        Batalian b
+            LEFT JOIN
+        Soldier s ON b.batalian_id = s.batalian_id
+    GROUP BY b.batalian_id , b.batalian_name;
+    
+SELECT 
+    *
+FROM
+    View_BatalianStrength;
+
+
 
 
 
